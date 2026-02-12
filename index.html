@@ -110,6 +110,18 @@
                             alt="..." />
                     </div>
                 </div>
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid h-100 border-logo" src="assets/img/portfolio/skullroulette.png"
+                            alt="..." />
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -164,7 +176,7 @@
                         C# · Node.js · Solidity · Hardhat · Ether.js · Wagmi · SQL Server · MongoDB
                     </p>
                 </div>
-                                <div class="col-lg-3 ms-auto mb-5 text-center px-4">
+                <div class="col-lg-3 ms-auto mb-5 text-center px-4">
                     <i class="fa-solid fa-robot icons mb-4"></i>
                     <p class="lead">
                         Custom AI process automations using n8n & Make
@@ -263,9 +275,10 @@
                 <!-- Footer Social Icons-->
                 <div class="col-lg-12 mb-lg-0">
                     <h4 class="text-uppercase mb-4">Find me on</h4>
-                    <a class="btn btn-outline-light btn-social mx-2" href="https://github.com/momiamfree" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-2" href="https://es.linkedin.com/in/alexpgimeno" target="_blank"><i
-                            class="fab fa-fw fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-2" href="https://github.com/momiamfree"
+                        target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-2" href="https://es.linkedin.com/in/alexpgimeno"
+                        target="_blank"><i class="fab fa-fw fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
@@ -367,8 +380,8 @@
                             <div class="col-lg-5 px-4 mt-2 mb-5"> <!-- Portfolio Modal - Text-->
                                 <p class="mb-4 me-2 ps-2">SkullMarketplace is a dApp that allows users to mint NFTs and
                                     view the NFTs in their wallet directly on the blockchain.<br><br>
-                                    It’s built on Ethereum Sepolia, with smart contracts written in Solidity,
-                                    decentralized storage on IPFS, and a frontend in React + TypeScript integrated with
+                                    It’s built on <b>Ethereum Sepolia</b>, with smart contracts written in Solidity,
+                                    decentralized storage on IPFS, and a frontend in React + TypeScript + Tailwind integrated with
                                     ethers.js, wagmi, and RainbowKit for wallet connection and on-chain interaction.
                                 </p>
                                 <a href="https://skullmarketplace.netlify.app/" target="_blank"
@@ -392,7 +405,68 @@
             </div>
         </div>
     </div>
+    <!-- Portfolio Modal 3-->
+    <div class="portfolio-modal modal fade text-white" id="portfolioModal3" tabindex="-1"
+        aria-labelledby="portfolioModal2" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-primary rounded">
+                <div class="modal-header border-0"><i class="fa-solid fa-xmark btn-close icons text-white"
+                        data-bs-dismiss="modal" type="button"></i></div>
+                <div class="modal-body text-center pb-5 bg-primary rounded">
+                    <div class="container">
+                        <div class="row justify-content-center">
 
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0 text-white">
+                                SkullRoulette</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom pb-4">
+                                <div class="divider-custom-line"></div>
+                                <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
+                                <div class="divider-custom-line"></div>
+                            </div>
+
+                            <div class="col-lg-7 ps-4"> <!-- Portfolio Modal - Image-->
+                                <a href="https://skullroulette.netlify.app/" target="_blank"><img
+                                        class="img-fluid rounded mb-5 border-logo"
+                                        src="assets/img/portfolio/skullroulette.png" alt="..." /></a>
+                            </div>
+                            <div class="col-lg-5 px-4 mt-2 mb-5"> <!-- Portfolio Modal - Text-->
+                                <p class="mb-4 me-2 ps-2">SkullRoulette is an interactive Web3 roulette game fully
+                                    powered by smart contracts.
+                                    Users can buy tokens, approve spending, and spin the roulette directly on-chain,
+                                    with results generated and verified on <b>Ethereum Sepolia</b>.
+                                    Built with Solidity, React, TypeScript, ethers.js, wagmi, and RainbowKit, Tailwind, the
+                                    project showcases:
+                                <ul class="text-start me-3">
+                                    <li class="ps-4 mb-1">Secure ERC-20 token mechanics</li>
+                                    <li class="ps-4 mb-1">On-chain betting logic</li>
+                                    <li class="ps-4 mb-1">Event-driven UI updates</li>
+                                    <li class="ps-4 mb-1">Responsive animated roulette interface</li>
+                                    <li class="ps-4 mb-1">Clean Web3 wallet UX with real-time balance tracking</li>
+                                </ul>
+                                </p>
+                                <a href="https://skullroulette.netlify.app/" target="_blank"
+                                    class="btn btn-outline-light btn-social mt-2 mx-1"><i
+                                        class="fa-solid fa-up-right-from-square"></i></a>
+                                <a href="https://github.com/momiamfree/SkullRoulette" target="_blank"
+                                    class="btn btn-outline-light btn-social mt-2 mx-1"><i
+                                        class="fa-brands fa-github"></i></a>
+                            </div>
+                            <div class="col-lg-8">
+                                <button class="btn btn-primary btn-close-down" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close
+                                </button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
