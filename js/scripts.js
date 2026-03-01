@@ -51,5 +51,41 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Web3Forms contact form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitButton');
+            const successMsg = document.getElementById('submitSuccessMessage');
+            const errorMsg = document.getElementById('submitErrorMessage');
+
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            successMsg.classList.add('d-none');
+            errorMsg.classList.add('d-none');
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+                });
+                const result = await response.json();
+                if (result.success) {
+                    successMsg.classList.remove('d-none');
+                    contactForm.reset();
+                } else {
+                    errorMsg.classList.remove('d-none');
+                }
+            } catch {
+                errorMsg.classList.remove('d-none');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Send';
+            }
+        });
+    }
+
 });
 
