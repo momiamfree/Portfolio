@@ -51,8 +51,8 @@
 <body id="page-top" class="bg-nav text-white">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed top-0 w-full z-50 bg-nav uppercase font-heading font-bold py-4 lg:py-6" id="mainNav">
-        <div class="max-w-6xl mx-auto px-4 flex items-center justify-between w-full">
+    <nav class="navbar navbar-expand-lg fixed top-0 w-full z-50 bg-nav uppercase font-heading font-bold py-4 lg:py-6 shadow-[0_2px_20px_rgba(0,0,0,0.6)]" id="mainNav">
+        <div class="max-w-6xl mx-auto px-4 flex flex-wrap items-center justify-between w-full">
             <a class="navbar-brand text-white text-xl lg:text-[1.75em]" href="#page-top">SkullKid.Dev</a>
             <button
                 class="navbar-toggler bg-accent text-white px-3 py-2 rounded text-sm font-bold uppercase"
@@ -86,15 +86,15 @@
     <!-- Masthead -->
     <header class="masthead page-section text-white text-center">
         <div class="section-inner max-w-5xl mx-auto px-4 flex items-center flex-col">
-            <img class="w-48 mb-4 rounded-full border-logo" src="assets/SKULLKID.png" alt="SkullKid" />
-            <h1 class="font-heading font-bold text-[2.75rem] lg:text-5xl uppercase mb-0 leading-tight">Hi, I'm SkullKid</h1>
+            <img class="hero-avatar w-48 mb-4 rounded-full border-logo shadow-[0_0_40px_rgba(135,66,180,0.55)]" src="assets/SKULLKID.png" alt="SkullKid" />
+            <h1 class="hero-title font-heading font-bold text-[2.75rem] lg:text-5xl uppercase mb-0 leading-tight">Hi, I'm SkullKid</h1>
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <p class="text-xl lg:text-2xl font-light mb-4 mt-3">FullStack Developer - Blockchain - AI Automations</p>
-            <p class="font-light mb-10 lg:w-2/3 text-lg px-4">My real name is Alex, but sometimes we all need to hide
+            <p class="hero-sub text-xl lg:text-2xl font-light mb-4 mt-3">FullStack Developer - Blockchain - AI Automations</p>
+            <p class="hero-text font-light mb-10 lg:w-2/3 text-lg px-4">My real name is Alex, but sometimes we all need to hide
                 behind a mask to believe in what we're capable of,
                 just like Link does in Majora's Mask.
             </p>
@@ -104,7 +104,7 @@
     <!-- Portfolio Section -->
     <section class="page-section py-24 bg-nav" id="portfolio">
         <div class="section-inner max-w-6xl mx-auto px-4">
-            <h2 class="font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl">Work</h2>
+            <h2 class="reveal font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl">Work</h2>
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
@@ -117,10 +117,10 @@
                 </p>
             </div>
             <!-- Portfolio Grid -->
-            <div class="flex flex-wrap justify-center">
+            <div class="reveal-group flex flex-wrap justify-center">
                 <!-- Portfolio Item 1 -->
-                <div class="w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
-                    <div class="portfolio-item mx-auto shadow-lg" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                <div class="reveal w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
+                    <div class="portfolio-item mx-auto shadow-[0_8px_30px_rgba(0,0,0,0.6)]" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                         <div class="portfolio-item-caption">
                             <div class="portfolio-item-caption-content text-center text-white">
                                 <i class="fas fa-plus fa-3x"></i>
@@ -130,8 +130,8 @@
                     </div>
                 </div>
                 <!-- Portfolio Item 2 -->
-                <div class="w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
-                    <div class="portfolio-item mx-auto shadow-lg" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                <div class="reveal w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
+                    <div class="portfolio-item mx-auto shadow-[0_8px_30px_rgba(0,0,0,0.6)]" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                         <div class="portfolio-item-caption">
                             <div class="portfolio-item-caption-content text-center text-white">
                                 <i class="fas fa-plus fa-3x"></i>
@@ -141,8 +141,8 @@
                     </div>
                 </div>
                 <!-- Portfolio Item 3 -->
-                <div class="w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
-                    <div class="portfolio-item mx-auto shadow-lg" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                <div class="reveal w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
+                    <div class="portfolio-item mx-auto shadow-[0_8px_30px_rgba(0,0,0,0.6)]" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                         <div class="portfolio-item-caption">
                             <div class="portfolio-item-caption-content text-center text-white">
                                 <i class="fas fa-plus fa-3x"></i>
@@ -158,40 +158,40 @@
     <!-- About Section -->
     <section class="page-section py-24 bg-primary text-white" id="about">
         <div class="section-inner max-w-6xl mx-auto px-4">
-            <h2 class="font-heading font-bold text-center uppercase text-white text-[2.25rem] lg:text-5xl">About me</h2>
+            <h2 class="reveal font-heading font-bold text-center uppercase text-white text-[2.25rem] lg:text-5xl">About me</h2>
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div class="lg:w-2/3 mx-auto text-center mb-8 mt-4 px-4">
+            <div class="reveal lg:w-2/3 mx-auto text-center mb-8 mt-4 px-4">
                 <p class="text-lg">
                     I've always been interested in understanding what's behind the things we use every day: how they
                     work, why they're built that way, and how they can be improved. I started tinkering with HTML,
                     CSS, and JavaScript back in high school, and I haven't stopped since.
                 </p>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-                <div class="bg-nav rounded-2xl p-8 flex flex-col items-center text-center">
+            <div class="reveal-group grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
                     <i class="fa-solid fa-briefcase text-4xl mb-5 text-accent"></i>
                     <p class="text-lg mb-0">
                         Since 2018, I've been developing technology solutions for companies in sectors such as money
                         transfer, insurance, airlines, and water management
                     </p>
                 </div>
-                <div class="bg-nav rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
                     <i class="fa-solid fa-paintbrush text-4xl mb-5 text-accent"></i>
                     <p class="text-lg mb-0">
                         Angular · React · HTML · JavaScript · TypeScript · CSS · Bootstrap · Tailwind
                     </p>
                 </div>
-                <div class="bg-nav rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
                     <i class="fa-solid fa-code text-4xl mb-5 text-accent"></i>
                     <p class="text-lg mb-0">
                         C# · Node.js · Solidity · Hardhat · Ether.js · Wagmi · SQL Server · MongoDB
                     </p>
                 </div>
-                <div class="bg-nav rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
                     <i class="fa-solid fa-robot text-4xl mb-5 text-accent"></i>
                     <p class="text-lg mb-0">
                         Custom AI process automations using n8n & Make
@@ -204,14 +204,14 @@
     <!-- Contact Section -->
     <section class="page-section py-24 bg-nav" id="contact">
         <div class="section-inner max-w-6xl mx-auto px-4">
-            <h2 class="font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl">Contact Me</h2>
+            <h2 class="reveal font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl">Contact Me</h2>
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
             <div class="flex justify-center">
-                <div class="w-full lg:w-2/3 xl:w-7/12">
+                <div class="reveal w-full lg:w-2/3 xl:w-7/12">
                     <form id="contactForm">
                         <input type="hidden" name="access_key" value="c87d6ed8-7774-496c-91d0-a428b36bd7de" />
                         <input type="hidden" name="subject" value="New message from SkullKid.Dev" />
@@ -246,7 +246,7 @@
                             <div class="text-center text-red-400 mb-3">Something went wrong. Please try again.</div>
                         </div>
                         <!-- Submit Button -->
-                        <button class="bg-accent hover:opacity-90 text-white px-7 py-4 text-xl font-bold rounded uppercase disabled:opacity-50 cursor-pointer"
+                        <button class="bg-accent hover:opacity-90 text-white px-7 py-4 text-xl font-bold rounded uppercase disabled:opacity-50 cursor-pointer shadow-[0_4px_20px_rgba(135,66,180,0.5)]"
                             id="submitButton" type="submit">Send</button>
                     </form>
                 </div>

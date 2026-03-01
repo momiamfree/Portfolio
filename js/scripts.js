@@ -7,7 +7,7 @@
 // Scripts
 // 
 
-window.addEventListener('DOMContentLoaded', event => {
+window.addEventListener('DOMContentLoaded', () => {
 
     // Navbar shrink function
     var navbarShrink = function () {
@@ -50,6 +50,25 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+
+    // Scroll-reveal with staggered groups
+    document.querySelectorAll('.reveal-group').forEach(group => {
+        group.querySelectorAll(':scope > .reveal').forEach((el, i) => {
+            el.style.transitionDelay = `${i * 0.13}s`;
+        });
+    });
+    const revealEls = document.querySelectorAll('.reveal');
+    if (revealEls.length) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => revealObserver.observe(el));
+    }
 
     // Web3Forms contact form submission
     const contactForm = document.getElementById('contactForm');

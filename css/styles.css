@@ -84,7 +84,9 @@ header {
   max-width: 25rem;
   border-radius: 0.5rem;
   overflow: hidden;
+  transition: transform 0.3s ease;
 }
+.portfolio-item:hover { transform: translateY(-6px); }
 .portfolio-item-caption {
   position: absolute;
   top: 0; left: 0;
@@ -258,6 +260,9 @@ textarea.form-control { resize: vertical; height: 10rem; }
 /* Toggler: visible on mobile, hidden on desktop */
 .navbar-toggler { display: block; }
 
+/* Mobile: collapse drops below the brand/toggler row */
+.navbar-collapse { flex-basis: 100%; }
+
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-toggler  { display: none !important; }
   .navbar-expand-lg .navbar-collapse {
@@ -266,3 +271,34 @@ textarea.form-control { resize: vertical; height: 10rem; }
     flex-grow: 1;
   }
 }
+
+/* ======= ANIMATIONS ======= */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Hero entrance */
+.hero-avatar { animation: fadeInScale 0.8s ease both; }
+.hero-title  { animation: fadeInUp 0.7s 0.25s ease both; }
+.hero-sub    { animation: fadeInUp 0.7s 0.45s ease both; }
+.hero-text   { animation: fadeInUp 0.7s 0.65s ease both; }
+
+/* Scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* About Me card hover lift */
+.about-card { transition: transform 0.3s ease; }
+.about-card:hover { transform: translateY(-8px); }
