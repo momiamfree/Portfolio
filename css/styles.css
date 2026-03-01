@@ -76,17 +76,17 @@ header {
 .divider-custom .divider-custom-line:last-child  { margin-left:  1rem; }
 .divider-custom .divider-custom-icon { color: #fff; font-size: 2rem; }
 
-/* ======= PORTFOLIO HOVER ======= */
-.portfolio-item {
+/* ======= PORTFOLIO CARD ======= */
+.portfolio-card {
   cursor: pointer;
-  position: relative;
-  display: block;
-  max-width: 25rem;
-  border-radius: 0.5rem;
-  overflow: hidden;
   transition: transform 0.3s ease;
 }
-.portfolio-item:hover { transform: translateY(-6px); }
+.portfolio-card:hover { transform: translateY(-6px); }
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
 .portfolio-item-caption {
   position: absolute;
   top: 0; left: 0;
@@ -98,7 +98,7 @@ header {
   opacity: 0;
   background-color: rgba(135, 66, 180, 0.7);
 }
-.portfolio-item:hover .portfolio-item-caption { opacity: 1; }
+.portfolio-card:hover .portfolio-item-caption { opacity: 1; }
 .portfolio-item-caption-content { font-size: 1.5rem; }
 
 /* ======= BORDER-LOGO ======= */
