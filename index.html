@@ -13,468 +13,443 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-        type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            // Disable visibility plugin: Tailwind generates .collapse { visibility: collapse }
+            // which conflicts with Bootstrap's usage of .collapse for show/hide
+            corePlugins: { visibility: false },
+            theme: {
+                screens: {
+                    sm:  '576px',
+                    md:  '768px',
+                    lg:  '992px',
+                    xl:  '1200px',
+                    '2xl': '1400px',
+                },
+                extend: {
+                    colors: {
+                        nav:       '#282125',
+                        primary:   '#3e373b',
+                        secondary: '#2c3e50',
+                        accent:    '#8742b4',
+                    },
+                    fontFamily: {
+                        heading: ["'Montserrat'", 'sans-serif'],
+                        body:    ["'Lato'",       'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS (minimal) -->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 
-<body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg bg-nav text-uppercase fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top">SkullKid.Dev</a>
-            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded menu-responsive"
-                type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
+<body id="page-top" class="bg-nav text-white">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed top-0 w-full z-50 bg-nav uppercase font-heading font-bold py-4 lg:py-6" id="mainNav">
+        <div class="max-w-6xl mx-auto px-4 flex items-center justify-between w-full">
+            <a class="navbar-brand text-white text-xl lg:text-[1.75em]" href="#page-top">SkullKid.Dev</a>
+            <button
+                class="navbar-toggler bg-accent text-white px-3 py-2 rounded text-sm font-bold uppercase"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#portfolio">Work</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About
-                            Me<menu></menu></a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#contact">Contact</a></li>
+                <ul class="flex flex-col lg:flex-row lg:ml-auto mt-4 lg:mt-0">
+                    <li class="mx-0 lg:mx-1">
+                        <a class="nav-link block py-3 px-3 text-white rounded hover:text-accent transition-colors uppercase font-bold"
+                           href="#portfolio">Work</a>
+                    </li>
+                    <li class="mx-0 lg:mx-1">
+                        <a class="nav-link block py-3 px-3 text-white rounded hover:text-accent transition-colors uppercase font-bold"
+                           href="#about">About Me<menu></menu></a>
+                    </li>
+                    <li class="mx-0 lg:mx-1">
+                        <a class="nav-link block py-3 px-3 text-white rounded hover:text-accent transition-colors uppercase font-bold"
+                           href="#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Masthead-->
-    <header class="masthead bg-primary text-white text-center page-section">
-        <div class="container d-flex align-items-center flex-column container-secction">
-            <!-- Masthead Avatar Image-->
-            <img class="masthead-avatar mb-4 rounded-circle border-logo" src="assets/SKULLKID.png" alt="..." />
-            <!-- Masthead Heading-->
-            <h1 class="masthead-heading text-uppercase mb-0">Hi, I'm SkullKid</h1>
-            <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-4 mt-3">FullStack Developer - Blockchain - AI Automations
-            </p>
-            <p class="font-weight-light mb-5 col-lg-8 lead px-4">My real name is Alex, but sometimes we all need to hide
-                behind a mask
-                to believe in what we’re capable of,
-                just like Link does in Majora’s Mask.
-            </p>
-        </div>
-    </header>
-    <!-- Portfolio Section-->
-    <section class="page-section portfolio" id="portfolio">
-        <div class="container container-secction">
-            <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-white mb-0">Work</h2>
-            <!-- Icon Divider-->
+
+    <!-- Masthead -->
+    <header class="masthead page-section text-white text-center">
+        <div class="section-inner max-w-5xl mx-auto px-4 flex items-center flex-col">
+            <img class="w-48 mb-4 rounded-full border-logo" src="assets/SKULLKID.png" alt="SkullKid" />
+            <h1 class="font-heading font-bold text-[2.75rem] lg:text-5xl uppercase mb-0 leading-tight">Hi, I'm SkullKid</h1>
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center mb-5 text-white px-4 mt-4">
-                    <p class="lead">
-                        I’ve always enjoyed doing hands-on projects in my free time to expand my knowledge. Here are
-                        some of them:
-                    </p>
-                </div>
+            <p class="text-xl lg:text-2xl font-light mb-4 mt-3">FullStack Developer - Blockchain - AI Automations</p>
+            <p class="font-light mb-10 lg:w-2/3 text-lg px-4">My real name is Alex, but sometimes we all need to hide
+                behind a mask to believe in what we're capable of,
+                just like Link does in Majora's Mask.
+            </p>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section class="page-section py-24 bg-nav" id="portfolio">
+        <div class="section-inner max-w-6xl mx-auto px-4">
+            <h2 class="font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl">Work</h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
+                <div class="divider-custom-line"></div>
             </div>
-            <!-- Portfolio Grid Items-->
-            <div class="row justify-content-center">
-                <!-- Portfolio Item 1-->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fas fa-plus fa-3x"></i></div>
+            <div class="lg:w-2/3 mx-auto text-center mb-12 text-white px-4 mt-4">
+                <p class="text-lg">
+                    I've always enjoyed doing hands-on projects in my free time to expand my knowledge. Here are
+                    some of them:
+                </p>
+            </div>
+            <!-- Portfolio Grid -->
+            <div class="flex flex-wrap justify-center">
+                <!-- Portfolio Item 1 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
+                    <div class="portfolio-item mx-auto shadow-lg" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div class="portfolio-item-caption">
+                            <div class="portfolio-item-caption-content text-center text-white">
+                                <i class="fas fa-plus fa-3x"></i>
+                            </div>
                         </div>
-                        <img class="img-fluid h-100 border-logo" src="assets/img/portfolio/skullbitrage.png"
-                            alt="..." />
+                        <img class="w-full border-logo" src="assets/img/portfolio/skullbitrage.png" alt="SkullBitrage" />
                     </div>
                 </div>
-                <!-- Portfolio Item 2-->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fas fa-plus fa-3x"></i></div>
+                <!-- Portfolio Item 2 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
+                    <div class="portfolio-item mx-auto shadow-lg" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                        <div class="portfolio-item-caption">
+                            <div class="portfolio-item-caption-content text-center text-white">
+                                <i class="fas fa-plus fa-3x"></i>
+                            </div>
                         </div>
-                        <img class="img-fluid h-100 border-logo" src="assets/img/portfolio/skullmarketplace.png"
-                            alt="..." />
+                        <img class="w-full border-logo" src="assets/img/portfolio/skullmarketplace.png" alt="SkullMarketplace" />
                     </div>
                 </div>
-                <!-- Portfolio Item 3-->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                        <div
-                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i
-                                    class="fas fa-plus fa-3x"></i></div>
+                <!-- Portfolio Item 3 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
+                    <div class="portfolio-item mx-auto shadow-lg" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                        <div class="portfolio-item-caption">
+                            <div class="portfolio-item-caption-content text-center text-white">
+                                <i class="fas fa-plus fa-3x"></i>
+                            </div>
                         </div>
-                        <img class="img-fluid h-100 border-logo" src="assets/img/portfolio/skullroulette.png"
-                            alt="..." />
+                        <img class="w-full border-logo" src="assets/img/portfolio/skullroulette.png" alt="SkullRoulette" />
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- About Section-->
-    <section class="page-section bg-primary text-white mb-0" id="about">
-        <div class="container container-secction">
-            <!-- About Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-white">
-                About me
-            </h2>
 
-            <!-- Icon Divider-->
-            <div class="divider-custom divider-light">
+    <!-- About Section -->
+    <section class="page-section py-24 bg-primary text-white" id="about">
+        <div class="section-inner max-w-6xl mx-auto px-4">
+            <h2 class="font-heading font-bold text-center uppercase text-white text-[2.25rem] lg:text-5xl">About me</h2>
+            <div class="divider-custom">
                 <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="fa-solid fa-skull"></i>
-                </div>
+                <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-
-            <!-- About Intro -->
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center mb-5 mt-4 px-4">
-                    <p class="lead">
-                        I’ve always been interested in understanding what’s behind the things we use every day: how they
-                        work, why they’re built that way, and how they can be improved. I started tinkering with HTML,
-                        CSS, and JavaScript back in high school, and I haven’t stopped since.
-                    </p>
-                </div>
+            <div class="lg:w-2/3 mx-auto text-center mb-8 mt-4 px-4">
+                <p class="text-lg">
+                    I've always been interested in understanding what's behind the things we use every day: how they
+                    work, why they're built that way, and how they can be improved. I started tinkering with HTML,
+                    CSS, and JavaScript back in high school, and I haven't stopped since.
+                </p>
             </div>
-
-            <!-- About Content -->
-            <div class="row">
-                <div class="col-lg-3 ms-auto mb-5 text-center px-4">
-                    <i class="fa-solid fa-briefcase icons mb-4"></i>
-                    <p class="lead">
-                        Since 2018, I’ve been developing technology solutions for companies in sectors such as money
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+                <div class="bg-nav rounded-2xl p-8 flex flex-col items-center text-center">
+                    <i class="fa-solid fa-briefcase text-4xl mb-5 text-accent"></i>
+                    <p class="text-lg mb-0">
+                        Since 2018, I've been developing technology solutions for companies in sectors such as money
                         transfer, insurance, airlines, and water management
                     </p>
                 </div>
-
-                <div class="col-lg-3 ms-auto text-center px-4 mb-5">
-                    <p class="lead">
-                        <strong><i class="fa-solid fa-paintbrush icons"></i></strong><br><br>
+                <div class="bg-nav rounded-2xl p-8 flex flex-col items-center text-center">
+                    <i class="fa-solid fa-paintbrush text-4xl mb-5 text-accent"></i>
+                    <p class="text-lg mb-0">
                         Angular · React · HTML · JavaScript · TypeScript · CSS · Bootstrap · Tailwind
                     </p>
                 </div>
-                <div class="col-lg-3 ms-auto text-center px-4 mb-5">
-
-                    <p class="lead">
-                        <strong><i class="fa-solid fa-code icons"></i></strong><br><br>
+                <div class="bg-nav rounded-2xl p-8 flex flex-col items-center text-center">
+                    <i class="fa-solid fa-code text-4xl mb-5 text-accent"></i>
+                    <p class="text-lg mb-0">
                         C# · Node.js · Solidity · Hardhat · Ether.js · Wagmi · SQL Server · MongoDB
                     </p>
                 </div>
-                <div class="col-lg-3 ms-auto mb-5 text-center px-4">
-                    <i class="fa-solid fa-robot icons mb-4"></i>
-                    <p class="lead">
+                <div class="bg-nav rounded-2xl p-8 flex flex-col items-center text-center">
+                    <i class="fa-solid fa-robot text-4xl mb-5 text-accent"></i>
+                    <p class="text-lg mb-0">
                         Custom AI process automations using n8n & Make
                     </p>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- Contact Section-->
-    <section class="page-section" id="contact">
-        <div class="container container-secction">
-            <!-- Contact Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-white mb-0">Contact Me</h2>
-            <!-- Icon Divider-->
+    <!-- Contact Section -->
+    <section class="page-section py-24 bg-nav" id="contact">
+        <div class="section-inner max-w-6xl mx-auto px-4">
+            <h2 class="font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl">Contact Me</h2>
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <!-- Contact Section Form-->
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-xl-7">
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
+            <div class="flex justify-center">
+                <div class="w-full lg:w-2/3 xl:w-7/12">
                     <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                        <!-- Name input-->
-                        <div class="form-floating mb-3">
+                        <!-- Name input -->
+                        <div class="form-floating mb-8">
                             <input class="form-control" id="name" type="text" placeholder="Enter your name..."
                                 data-sb-validations="required" />
-                            <label for="name" class="text-white">Full name</label>
+                            <label for="name">Full name</label>
                             <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                         </div>
-                        <!-- Email address input-->
-                        <div class="form-floating mb-3">
+                        <!-- Email address input -->
+                        <div class="form-floating mb-8">
                             <input class="form-control" id="email" type="email" placeholder="name@example.com"
                                 data-sb-validations="required,email" />
-                            <label for="email" class="text-white">Email address</label>
+                            <label for="email">Email address</label>
                             <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                             <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                         </div>
-                        <!-- Phone number input-->
-                        <div class="form-floating mb-3">
+                        <!-- Phone number input -->
+                        <div class="form-floating mb-8">
                             <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
                                 data-sb-validations="required" />
-                            <label for="phone" class="text-white">Phone number</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
-                            </div>
+                            <label for="phone">Phone number</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                         </div>
-                        <!-- Message input-->
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text"
-                                placeholder="Enter your message here..." style="height: 10rem"
+                        <!-- Message input -->
+                        <div class="form-floating mb-8">
+                            <textarea class="form-control" id="message" placeholder="Enter your message here..."
                                 data-sb-validations="required"></textarea>
-                            <label for="message" class="text-white">Message</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
-                            </div>
+                            <label for="message">Message</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                         </div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
+                        <!-- Submit success message -->
                         <div class="d-none" id="submitSuccessMessage">
                             <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
+                                <div class="font-bold">Form submission successful!</div>
                                 To activate this form, sign up at
                                 <br />
-                                <a
+                                <a class="text-accent underline"
                                     href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                             </div>
                         </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
+                        <!-- Submit error message -->
                         <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Error sending message!</div>
+                            <div class="text-center text-red-400 mb-3">Error sending message!</div>
                         </div>
-                        <!-- Submit Button-->
-                        <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                        <!-- Submit Button -->
+                        <button class="bg-accent hover:opacity-90 text-white px-7 py-4 text-xl font-bold rounded uppercase disabled:opacity-50 cursor-pointer"
+                            id="submitButton" type="submit">Send</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Footer-->
-    <footer class="footer text-center bg-primary">
-        <div class="container">
-            <div class="row">
-                <!-- Footer Social Icons-->
-                <div class="col-lg-12 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Find me on</h4>
-                    <a class="btn btn-outline-light btn-social mx-2" href="https://github.com/momiamfree"
-                        target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-2" href="https://es.linkedin.com/in/alexpgimeno"
-                        target="_blank"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                </div>
-            </div>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-primary text-white text-center">
+        <div class="max-w-6xl mx-auto px-4">
+            <h4 class="font-heading font-bold uppercase mb-4 text-xl">Find me on</h4>
+            <a class="btn-social" href="https://github.com/momiamfree" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a class="btn-social" href="https://es.linkedin.com/in/alexpgimeno" target="_blank">
+                <i class="fab fa-fw fa-linkedin-in"></i>
+            </a>
         </div>
     </footer>
-    <!-- Copyright Section-->
-    <div class="copyright py-4 text-center text-white">
-        <div class="container"><small>Copyright &copy; www.skullkid.dev 2026</small></div>
+
+    <!-- Copyright -->
+    <div class="py-4 text-center text-white bg-nav">
+        <div class="max-w-6xl mx-auto px-4"><small>Copyright &copy; www.skullkid.dev 2026</small></div>
     </div>
-    <!-- Portfolio Modals-->
-    <!-- Portfolio Modal 1-->
+
+    <!-- Portfolio Modals -->
+    <!-- Portfolio Modal 1 -->
     <div class="portfolio-modal modal fade text-white" id="portfolioModal1" tabindex="-1"
         aria-labelledby="portfolioModal1" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content bg-primary rounded">
-                <div class="modal-header border-0"><i class="fa-solid fa-xmark btn-close icons text-white"
-                        data-bs-dismiss="modal" type="button"></i></div>
-                <div class="modal-body text-center pb-5 bg-primary rounded">
-                    <div class="container">
-                        <div class="row justify-content-center">
-
-                            <!-- Portfolio Modal - Title-->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0 text-white">
-                                SkullBitrage</h2>
-                            <!-- Icon Divider-->
-                            <div class="divider-custom pb-4">
+            <div class="modal-content rounded">
+                <div class="modal-header">
+                    <i class="fa-solid fa-xmark text-3xl p-2 cursor-pointer hover:text-accent transition-colors"
+                        data-bs-dismiss="modal"></i>
+                </div>
+                <div class="modal-body text-center pb-10">
+                    <div class="max-w-5xl mx-auto px-4">
+                        <div class="flex flex-wrap justify-center">
+                            <h2 class="font-heading font-bold w-full uppercase mb-0 text-[2.25rem] lg:text-5xl text-white">SkullBitrage</h2>
+                            <div class="divider-custom w-full pb-4">
                                 <div class="divider-custom-line"></div>
                                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-
-                            <div class="col-lg-7 ps-4"> <!-- Portfolio Modal - Image-->
-                                <a href="https://skullbitrage.onrender.com/" target="_blank"><img
-                                        class="img-fluid rounded mb-5 border-logo"
-                                        src="assets/img/portfolio/skullbitrage.png" alt="..." /></a>
+                            <div class="w-full lg:w-7/12 px-4">
+                                <a href="https://skullbitrage.onrender.com/" target="_blank">
+                                    <img class="w-full rounded mb-8 border-logo"
+                                        src="assets/img/portfolio/skullbitrage.png" alt="SkullBitrage" />
+                                </a>
                             </div>
-                            <div class="col-lg-5 px-4 mt-2 mb-5"> <!-- Portfolio Modal - Text-->
+                            <div class="w-full lg:w-5/12 px-4 mt-2 mb-8 text-left">
                                 <p class="mb-4">SkullBitrage is an analytics platform that detects profit opportunities
                                     across decentralized crypto derivatives exchanges, focused on delta-neutral
                                     strategies and arbitrage, built with React and Node.js.<br>
-                                <ul class="text-start me-3">
-                                    <li class="ps-4 mb-1">Periodic collection of market data per exchange (funding
-                                        rates,
+                                <ul class="list-disc pl-6">
+                                    <li class="mb-1">Periodic collection of market data per exchange (funding rates,
                                         prices, volume, and open interest)</li>
-                                    <li class="ps-4 mb-1">Calculation of historical and real-time APRs using exponential
-                                        moving averages (EMA) per token and exchange
-                                    </li>
-                                    <li class="ps-4 mb-1">Persistence of historical data in local files to ensure
-                                        temporal
+                                    <li class="mb-1">Calculation of historical and real-time APRs using exponential
+                                        moving averages (EMA) per token and exchange</li>
+                                    <li class="mb-1">Persistence of historical data in local files to ensure temporal
                                         consistency and multi-timeframe analysis</li>
                                 </ul>
                                 </p>
                                 <a href="https://skullbitrage.onrender.com/" target="_blank"
-                                    class="btn btn-outline-light btn-social mt-3 mx-1"><i
-                                        class="fa-solid fa-up-right-from-square"></i></a>
+                                    class="btn-social mt-3 mx-1"><i class="fa-solid fa-up-right-from-square"></i></a>
                                 <a href="https://github.com/momiamfree/SkullBitrage" target="_blank"
-                                    class="btn btn-outline-light btn-social mt-3 mx-1"><i
-                                        class="fa-brands fa-github"></i></a>
+                                    class="btn-social mt-3 mx-1"><i class="fa-brands fa-github"></i></a>
                             </div>
-                            <div class="col-lg-8">
-                                <button class="btn btn-primary btn-close-down" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close
+                            <div class="w-full lg:w-2/3 flex justify-center">
+                                <button class="bg-accent hover:opacity-90 text-white px-8 py-3 rounded font-bold uppercase cursor-pointer"
+                                    data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark mr-2"></i>Close
                                 </button>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Portfolio Modal 2-->
+
+    <!-- Portfolio Modal 2 -->
     <div class="portfolio-modal modal fade text-white" id="portfolioModal2" tabindex="-1"
         aria-labelledby="portfolioModal2" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content bg-primary rounded">
-                <div class="modal-header border-0"><i class="fa-solid fa-xmark btn-close icons text-white"
-                        data-bs-dismiss="modal" type="button"></i></div>
-                <div class="modal-body text-center pb-5 bg-primary rounded">
-                    <div class="container">
-                        <div class="row justify-content-center">
-
-                            <!-- Portfolio Modal - Title-->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0 text-white">
-                                Marketplace</h2>
-                            <!-- Icon Divider-->
-                            <div class="divider-custom pb-4">
+            <div class="modal-content rounded">
+                <div class="modal-header">
+                    <i class="fa-solid fa-xmark text-3xl p-2 cursor-pointer hover:text-accent transition-colors"
+                        data-bs-dismiss="modal"></i>
+                </div>
+                <div class="modal-body text-center pb-10">
+                    <div class="max-w-5xl mx-auto px-4">
+                        <div class="flex flex-wrap justify-center">
+                            <h2 class="font-heading font-bold w-full uppercase mb-0 text-[2.25rem] lg:text-5xl text-white">Marketplace</h2>
+                            <div class="divider-custom w-full pb-4">
                                 <div class="divider-custom-line"></div>
                                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-
-                            <div class="col-lg-7 ps-4"> <!-- Portfolio Modal - Image-->
-                                <a href="https://skullmarketplace.netlify.app/" target="_blank"><img
-                                        class="img-fluid rounded mb-5 border-logo"
-                                        src="assets/img/portfolio/skullmarketplace.png" alt="..." /></a>
+                            <div class="w-full lg:w-7/12 px-4">
+                                <a href="https://skullmarketplace.netlify.app/" target="_blank">
+                                    <img class="w-full rounded mb-8 border-logo"
+                                        src="assets/img/portfolio/skullmarketplace.png" alt="SkullMarketplace" />
+                                </a>
                             </div>
-                            <div class="col-lg-5 px-4 mt-2 mb-5"> <!-- Portfolio Modal - Text-->
-                                <p class="mb-4 me-2 ps-2">SkullMarketplace is a dApp that allows users to mint NFTs and
+                            <div class="w-full lg:w-5/12 px-4 mt-2 mb-8 text-left">
+                                <p class="mb-4">SkullMarketplace is a dApp that allows users to mint NFTs and
                                     view the NFTs in their wallet directly on the blockchain.<br><br>
-                                    It’s built on <b>Ethereum Sepolia</b>, with smart contracts written in Solidity,
+                                    It's built on <b>Ethereum Sepolia</b>, with smart contracts written in Solidity,
                                     decentralized storage on IPFS, and a frontend in React + TypeScript + Tailwind integrated with
                                     ethers.js, wagmi, and RainbowKit for wallet connection and on-chain interaction.
                                 </p>
                                 <a href="https://skullmarketplace.netlify.app/" target="_blank"
-                                    class="btn btn-outline-light btn-social mt-2 mx-1"><i
-                                        class="fa-solid fa-up-right-from-square"></i></a>
+                                    class="btn-social mt-2 mx-1"><i class="fa-solid fa-up-right-from-square"></i></a>
                                 <a href="https://github.com/momiamfree/SkullMarketplace" target="_blank"
-                                    class="btn btn-outline-light btn-social mt-2 mx-1"><i
-                                        class="fa-brands fa-github"></i></a>
+                                    class="btn-social mt-2 mx-1"><i class="fa-brands fa-github"></i></a>
                             </div>
-                            <div class="col-lg-8">
-                                <button class="btn btn-primary btn-close-down" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close
+                            <div class="w-full lg:w-2/3 flex justify-center">
+                                <button class="bg-accent hover:opacity-90 text-white px-8 py-3 rounded font-bold uppercase cursor-pointer"
+                                    data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark mr-2"></i>Close
                                 </button>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Portfolio Modal 3-->
-    <div class="portfolio-modal modal fade text-white" id="portfolioModal3" tabindex="-1"
-        aria-labelledby="portfolioModal2" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content bg-primary rounded">
-                <div class="modal-header border-0"><i class="fa-solid fa-xmark btn-close icons text-white"
-                        data-bs-dismiss="modal" type="button"></i></div>
-                <div class="modal-body text-center pb-5 bg-primary rounded">
-                    <div class="container">
-                        <div class="row justify-content-center">
 
-                            <!-- Portfolio Modal - Title-->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0 text-white">
-                                SkullRoulette</h2>
-                            <!-- Icon Divider-->
-                            <div class="divider-custom pb-4">
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade text-white" id="portfolioModal3" tabindex="-1"
+        aria-labelledby="portfolioModal3" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content rounded">
+                <div class="modal-header">
+                    <i class="fa-solid fa-xmark text-3xl p-2 cursor-pointer hover:text-accent transition-colors"
+                        data-bs-dismiss="modal"></i>
+                </div>
+                <div class="modal-body text-center pb-10">
+                    <div class="max-w-5xl mx-auto px-4">
+                        <div class="flex flex-wrap justify-center">
+                            <h2 class="font-heading font-bold w-full uppercase mb-0 text-[2.25rem] lg:text-5xl text-white">SkullRoulette</h2>
+                            <div class="divider-custom w-full pb-4">
                                 <div class="divider-custom-line"></div>
                                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                                 <div class="divider-custom-line"></div>
                             </div>
-
-                            <div class="col-lg-7 ps-4"> <!-- Portfolio Modal - Image-->
-                                <a href="https://skullroulette.netlify.app/" target="_blank"><img
-                                        class="img-fluid rounded mb-5 border-logo"
-                                        src="assets/img/portfolio/skullroulette.png" alt="..." /></a>
+                            <div class="w-full lg:w-7/12 px-4">
+                                <a href="https://skullroulette.netlify.app/" target="_blank">
+                                    <img class="w-full rounded mb-8 border-logo"
+                                        src="assets/img/portfolio/skullroulette.png" alt="SkullRoulette" />
+                                </a>
                             </div>
-                            <div class="col-lg-5 px-4 mt-2 mb-5"> <!-- Portfolio Modal - Text-->
-                                <p class="mb-4 me-2 ps-2">SkullRoulette is an interactive Web3 roulette game fully
+                            <div class="w-full lg:w-5/12 px-4 mt-2 mb-8 text-left">
+                                <p class="mb-4">SkullRoulette is an interactive Web3 roulette game fully
                                     powered by smart contracts.
                                     Users can buy tokens, approve spending, and spin the roulette directly on-chain,
                                     with results generated and verified on <b>Ethereum Sepolia</b>.
                                     Built with Solidity, React, TypeScript, ethers.js, wagmi, and RainbowKit, Tailwind, the
                                     project showcases:
-                                <ul class="text-start me-3">
-                                    <li class="ps-4 mb-1">Secure ERC-20 token mechanics</li>
-                                    <li class="ps-4 mb-1">On-chain betting logic</li>
-                                    <li class="ps-4 mb-1">Event-driven UI updates</li>
-                                    <li class="ps-4 mb-1">Responsive animated roulette interface</li>
-                                    <li class="ps-4 mb-1">Clean Web3 wallet UX with real-time balance tracking</li>
+                                <ul class="list-disc pl-6">
+                                    <li class="mb-1">Secure ERC-20 token mechanics</li>
+                                    <li class="mb-1">On-chain betting logic</li>
+                                    <li class="mb-1">Event-driven UI updates</li>
+                                    <li class="mb-1">Responsive animated roulette interface</li>
+                                    <li class="mb-1">Clean Web3 wallet UX with real-time balance tracking</li>
                                 </ul>
                                 </p>
                                 <a href="https://skullroulette.netlify.app/" target="_blank"
-                                    class="btn btn-outline-light btn-social mt-2 mx-1"><i
-                                        class="fa-solid fa-up-right-from-square"></i></a>
+                                    class="btn-social mt-2 mx-1"><i class="fa-solid fa-up-right-from-square"></i></a>
                                 <a href="https://github.com/momiamfree/SkullRoulette" target="_blank"
-                                    class="btn btn-outline-light btn-social mt-2 mx-1"><i
-                                        class="fa-brands fa-github"></i></a>
+                                    class="btn-social mt-2 mx-1"><i class="fa-brands fa-github"></i></a>
                             </div>
-                            <div class="col-lg-8">
-                                <button class="btn btn-primary btn-close-down" data-bs-dismiss="modal">
-                                    <i class="fas fa-xmark fa-fw"></i>
-                                    Close
+                            <div class="w-full lg:w-2/3 flex justify-center">
+                                <button class="bg-accent hover:opacity-90 text-white px-8 py-3 rounded font-bold uppercase cursor-pointer"
+                                    data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark mr-2"></i>Close
                                 </button>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Bootstrap core JS-->
+
+    <!-- Bootstrap core JS (needed for modals and navbar collapse) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+    <!-- Core theme JS -->
     <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- SB Forms JS -->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 
