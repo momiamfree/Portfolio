@@ -282,6 +282,11 @@ textarea.form-control { resize: vertical; height: 10rem; }
   to   { opacity: 1; transform: scale(1); }
 }
 
+/* Spanish mobile: shrink long section title */
+@media (max-width: 575px) {
+    html[lang="es"] #automations h2 { font-size: 1.5rem; }
+}
+
 /* Hero entrance */
 .hero-avatar { animation: fadeInScale 0.8s ease both; }
 .hero-title   { animation: fadeInUp 0.7s 0.25s ease both; }
