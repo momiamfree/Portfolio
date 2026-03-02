@@ -284,8 +284,9 @@ textarea.form-control { resize: vertical; height: 10rem; }
 
 /* Hero entrance */
 .hero-avatar { animation: fadeInScale 0.8s ease both; }
-.hero-title  { animation: fadeInUp 0.7s 0.25s ease both; }
-.hero-sub    { animation: fadeInUp 0.7s 0.45s ease both; }
+.hero-title   { animation: fadeInUp 0.7s 0.25s ease both; }
+.hero-divider { animation: fadeInUp 0.7s 0.35s ease both; }
+.hero-sub     { animation: fadeInUp 0.7s 0.45s ease both; }
 .hero-text   { animation: fadeInUp 0.7s 0.65s ease both; }
 
 /* Scroll-reveal */
