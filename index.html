@@ -68,15 +68,25 @@
                 <ul class="flex flex-col lg:flex-row lg:ml-auto mt-4 lg:mt-0">
                     <li class="mx-0 lg:mx-1">
                         <a class="nav-link block py-3 px-3 text-white rounded hover:text-accent transition-colors uppercase font-bold"
-                           href="#portfolio">Work</a>
+                           href="#about"><span data-i18n="nav.about">About Me</span><menu></menu></a>
                     </li>
                     <li class="mx-0 lg:mx-1">
                         <a class="nav-link block py-3 px-3 text-white rounded hover:text-accent transition-colors uppercase font-bold"
-                           href="#about">About Me<menu></menu></a>
+                           href="#automations"><span data-i18n="nav.automate">Automate</span></a>
                     </li>
                     <li class="mx-0 lg:mx-1">
                         <a class="nav-link block py-3 px-3 text-white rounded hover:text-accent transition-colors uppercase font-bold"
-                           href="#contact">Contact</a>
+                           href="#portfolio"><span data-i18n="nav.work">Work</span></a>
+                    </li>
+                    <li class="mx-0 lg:mx-1">
+                        <a class="nav-link block py-3 px-3 text-white rounded hover:text-accent transition-colors uppercase font-bold"
+                           href="#contact"><span data-i18n="nav.contact">Contact</span></a>
+                    </li>
+                    <li class="mx-0 lg:mx-1 flex items-center mt-2 lg:mt-0 lg:ml-3">
+                        <button id="langToggle"
+                            class="text-xs border border-white/30 text-white/70 px-3 py-1.5 rounded font-heading font-bold uppercase hover:border-accent hover:text-accent transition-colors">
+                            ES
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -87,40 +97,121 @@
     <header class="masthead page-section text-white text-center">
         <div class="section-inner max-w-5xl mx-auto px-4 flex items-center flex-col">
             <img class="hero-avatar w-48 mb-4 rounded-full border-logo shadow-[0_0_40px_rgba(135,66,180,0.55)]" src="assets/SKULLKID.png" alt="SkullKid" />
-            <h1 class="hero-title font-heading font-bold text-[2.75rem] lg:text-5xl uppercase mb-0 leading-tight">Hi, I'm SkullKid</h1>
+            <h1 class="hero-title font-heading font-bold text-[2.75rem] lg:text-5xl uppercase mb-0 leading-tight" data-i18n="hero.title">Hi, I'm SkullKid</h1>
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <p class="hero-sub text-xl lg:text-2xl font-light mb-4 mt-3">FullStack Developer - Blockchain - AI Automations</p>
-            <p class="hero-text font-light mb-10 lg:w-2/3 text-lg px-4">My real name is Alex, but sometimes we all need to hide
-                behind a mask to believe in what we're capable of,
-                just like Link does in Majora's Mask.
-            </p>
+            <p class="hero-sub text-xl lg:text-2xl font-light mb-4 mt-3" data-i18n="hero.sub">FullStack Developer - Blockchain - AI Automations</p>
+            <p class="hero-text font-light mb-10 lg:w-2/3 text-lg px-4" data-i18n="hero.text">My real name is Alex, but sometimes we all need to hide behind a mask to believe in what we're capable of, just like Link does in Majora's Mask.</p>
         </div>
     </header>
 
-    <!-- Portfolio Section -->
-    <section class="page-section py-24 bg-nav" id="portfolio">
+    <!-- About Section -->
+    <section class="page-section py-24 bg-primary text-white" id="about">
         <div class="section-inner max-w-6xl mx-auto px-4">
-            <h2 class="reveal font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl">Work</h2>
+            <h2 class="reveal font-heading font-bold text-center uppercase text-white text-[2.25rem] lg:text-5xl" data-i18n="about.title">About me</h2>
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div class="lg:w-2/3 mx-auto text-center mb-12 text-white px-4 mt-4">
-                <p class="text-lg">
-                    I've always enjoyed doing hands-on projects in my free time to expand my knowledge. Here are
-                    some of them:
-                </p>
+            <div class="reveal lg:w-2/3 mx-auto text-center mb-8 mt-4 px-4">
+                <p class="text-lg" data-i18n="about.intro">I've always been interested in understanding what's behind the things we use every day: how they work, why they're built that way, and how they can be improved. I started tinkering with HTML, CSS, and JavaScript back in high school, and I haven't stopped since.</p>
+            </div>
+            <div class="reveal-group grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+                    <i class="fa-solid fa-briefcase text-4xl mb-5 text-accent"></i>
+                    <p class="text-lg mb-0" data-i18n="about.card1">Since 2018, I've been developing technology solutions for companies in sectors such as money transfer, insurance, airlines, and water management</p>
+                </div>
+                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+                    <i class="fa-solid fa-paintbrush text-4xl mb-5 text-accent"></i>
+                    <p class="text-lg mb-0" data-i18n="about.card2">Angular · React · HTML · JavaScript · TypeScript · CSS · Bootstrap · Tailwind</p>
+                </div>
+                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+                    <i class="fa-solid fa-code text-4xl mb-5 text-accent"></i>
+                    <p class="text-lg mb-0" data-i18n="about.card3">C# · Node.js · Solidity · Hardhat · Ether.js · Wagmi · SQL Server · MongoDB</p>
+                </div>
+                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+                    <i class="fa-solid fa-robot text-4xl mb-5 text-accent"></i>
+                    <p class="text-lg mb-0" data-i18n="about.card4">Custom AI process automations using n8n & Make</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automations Section -->
+    <section class="page-section py-24 bg-nav" id="automations">
+        <div class="section-inner max-w-6xl mx-auto px-4">
+            <h2 class="reveal font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl" data-i18n="auto.title">AI Automations</h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Value prop -->
+            <div class="reveal lg:w-2/3 mx-auto text-center mb-12 mt-4 px-4">
+                <p class="text-lg text-white/90" data-i18n="auto.intro">I help businesses and freelancers identify and eliminate their most time-consuming processes. Custom automations tailored to your workflow — so you save hours every week and cut operational costs.</p>
+            </div>
+            <!-- Service cards -->
+            <div class="reveal-group grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+                <div class="reveal about-card bg-primary rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+                    <i class="fa-solid fa-gears text-4xl mb-5 text-accent"></i>
+                    <h4 class="font-heading font-bold text-white text-base uppercase mb-3" data-i18n="auto.card1.title">Process Automation</h4>
+                    <p class="text-white/75 mb-0 text-sm leading-relaxed" data-i18n="auto.card1.text">Map your repetitive workflows and automate them end-to-end, eliminating manual errors and saving hours every week.</p>
+                </div>
+                <div class="reveal about-card bg-primary rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+                    <i class="fa-solid fa-brain text-4xl mb-5 text-accent"></i>
+                    <h4 class="font-heading font-bold text-white text-base uppercase mb-3" data-i18n="auto.card2.title">AI Integration</h4>
+                    <p class="text-white/75 mb-0 text-sm leading-relaxed" data-i18n="auto.card2.text">Add intelligence to your existing processes — automatic classification, smart responses, document analysis and content generation.</p>
+                </div>
+                <div class="reveal about-card bg-primary rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+                    <i class="fa-solid fa-plug text-4xl mb-5 text-accent"></i>
+                    <h4 class="font-heading font-bold text-white text-base uppercase mb-3" data-i18n="auto.card3.title">System Integration</h4>
+                    <p class="text-white/75 mb-0 text-sm leading-relaxed" data-i18n="auto.card3.text">Connect your tools — CRMs, ERPs, email, spreadsheets — into a single automated pipeline with no manual handoffs.</p>
+                </div>
+            </div>
+            <!-- Tools -->
+            <div class="reveal text-center mb-14">
+                <p class="text-white/40 uppercase text-xs font-heading font-bold tracking-widest mb-5" data-i18n="auto.tools">Tools I work with</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="text-sm border border-[#b060ff] text-[#b060ff] px-3 py-1.5 rounded-full font-heading">n8n</span>
+                    <span class="text-sm border border-[#b060ff] text-[#b060ff] px-3 py-1.5 rounded-full font-heading">Make</span>
+                    <span class="text-sm border border-[#b060ff] text-[#b060ff] px-3 py-1.5 rounded-full font-heading">OpenAI</span>
+                    <span class="text-sm border border-[#b060ff] text-[#b060ff] px-3 py-1.5 rounded-full font-heading">Webhooks</span>
+                    <span class="text-sm border border-[#b060ff] text-[#b060ff] px-3 py-1.5 rounded-full font-heading">REST APIs</span>
+                    <span class="text-sm border border-[#b060ff] text-[#b060ff] px-3 py-1.5 rounded-full font-heading">Zapier</span>
+                </div>
+            </div>
+            <!-- CTA -->
+            <div class="reveal text-center">
+                <a href="#contact"
+                    class="inline-block bg-accent hover:opacity-90 text-white px-10 py-4 text-lg font-bold font-heading rounded uppercase shadow-[0_4px_20px_rgba(135,66,180,0.5)] transition-opacity"
+                    data-i18n="auto.cta">
+                    Let's automate your business
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="page-section py-24 bg-primary" id="portfolio">
+        <div class="section-inner max-w-6xl mx-auto px-4">
+            <h2 class="reveal font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl" data-i18n="work.title">Work</h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="reveal lg:w-2/3 mx-auto text-center mb-12 text-white px-4 mt-4">
+                <p class="text-lg" data-i18n="work.intro">I've always enjoyed doing hands-on projects in my free time to expand my knowledge. Here are some of them:</p>
             </div>
             <!-- Portfolio Grid -->
             <div class="reveal-group flex flex-wrap justify-center">
                 <!-- Portfolio Item 1 -->
                 <div class="reveal w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
-                    <div class="portfolio-card bg-primary rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
+                    <div class="portfolio-card bg-nav rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
                         data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                         <div class="px-5 py-4">
                             <h3 class="font-heading font-bold text-white text-lg uppercase mb-2 leading-tight">SkullBitrage</h3>
@@ -142,7 +233,7 @@
                 </div>
                 <!-- Portfolio Item 2 -->
                 <div class="reveal w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
-                    <div class="portfolio-card bg-primary rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
+                    <div class="portfolio-card bg-nav rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
                         data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                         <div class="px-5 py-4">
                             <h3 class="font-heading font-bold text-white text-lg uppercase mb-2 leading-tight">SkullMarketplace</h3>
@@ -164,7 +255,7 @@
                 </div>
                 <!-- Portfolio Item 3 -->
                 <div class="reveal w-full md:w-1/2 lg:w-1/3 mb-12 px-4">
-                    <div class="portfolio-card bg-primary rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
+                    <div class="portfolio-card bg-nav rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
                         data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                         <div class="px-5 py-4">
                             <h3 class="font-heading font-bold text-white text-lg uppercase mb-2 leading-tight">SkullRoulette</h3>
@@ -188,56 +279,10 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="page-section py-24 bg-primary text-white" id="about">
-        <div class="section-inner max-w-6xl mx-auto px-4">
-            <h2 class="reveal font-heading font-bold text-center uppercase text-white text-[2.25rem] lg:text-5xl">About me</h2>
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div class="reveal lg:w-2/3 mx-auto text-center mb-8 mt-4 px-4">
-                <p class="text-lg">
-                    I've always been interested in understanding what's behind the things we use every day: how they
-                    work, why they're built that way, and how they can be improved. I started tinkering with HTML,
-                    CSS, and JavaScript back in high school, and I haven't stopped since.
-                </p>
-            </div>
-            <div class="reveal-group grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
-                    <i class="fa-solid fa-briefcase text-4xl mb-5 text-accent"></i>
-                    <p class="text-lg mb-0">
-                        Since 2018, I've been developing technology solutions for companies in sectors such as money
-                        transfer, insurance, airlines, and water management
-                    </p>
-                </div>
-                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
-                    <i class="fa-solid fa-paintbrush text-4xl mb-5 text-accent"></i>
-                    <p class="text-lg mb-0">
-                        Angular · React · HTML · JavaScript · TypeScript · CSS · Bootstrap · Tailwind
-                    </p>
-                </div>
-                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
-                    <i class="fa-solid fa-code text-4xl mb-5 text-accent"></i>
-                    <p class="text-lg mb-0">
-                        C# · Node.js · Solidity · Hardhat · Ether.js · Wagmi · SQL Server · MongoDB
-                    </p>
-                </div>
-                <div class="reveal about-card bg-nav rounded-2xl p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
-                    <i class="fa-solid fa-robot text-4xl mb-5 text-accent"></i>
-                    <p class="text-lg mb-0">
-                        Custom AI process automations using n8n & Make
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section class="page-section py-24 bg-nav" id="contact">
         <div class="section-inner max-w-6xl mx-auto px-4">
-            <h2 class="reveal font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl">Contact Me</h2>
+            <h2 class="reveal font-heading font-bold text-center uppercase text-white mb-0 text-[2.25rem] lg:text-5xl" data-i18n="contact.title">Contact Me</h2>
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-solid fa-skull"></i></div>
@@ -251,36 +296,36 @@
                         <!-- Name input -->
                         <div class="form-floating mb-8">
                             <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
-                            <label for="name">Full name</label>
+                            <label for="name" data-i18n="contact.name">Full name</label>
                         </div>
                         <!-- Email address input -->
                         <div class="form-floating mb-8">
                             <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
-                            <label for="email">Email address</label>
+                            <label for="email" data-i18n="contact.email">Email address</label>
                         </div>
                         <!-- Phone number input -->
                         <div class="form-floating mb-8">
                             <input class="form-control" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" />
-                            <label for="phone">Phone number</label>
+                            <label for="phone" data-i18n="contact.phone">Phone number</label>
                         </div>
                         <!-- Message input -->
                         <div class="form-floating mb-8">
                             <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." required></textarea>
-                            <label for="message">Message</label>
+                            <label for="message" data-i18n="contact.message">Message</label>
                         </div>
                         <!-- Submit success message -->
                         <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3 text-green-400 font-bold">
+                            <div class="text-center mb-3 text-green-400 font-bold" data-i18n="contact.success">
                                 Message sent! I'll get back to you soon.
                             </div>
                         </div>
                         <!-- Submit error message -->
                         <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-red-400 mb-3">Something went wrong. Please try again.</div>
+                            <div class="text-center text-red-400 mb-3" data-i18n="contact.error">Something went wrong. Please try again.</div>
                         </div>
                         <!-- Submit Button -->
                         <button class="bg-accent hover:opacity-90 text-white px-7 py-4 text-xl font-bold rounded uppercase disabled:opacity-50 cursor-pointer shadow-[0_4px_20px_rgba(135,66,180,0.5)]"
-                            id="submitButton" type="submit">Send</button>
+                            id="submitButton" type="submit" data-i18n="contact.send">Send</button>
                     </form>
                 </div>
             </div>
@@ -290,7 +335,7 @@
     <!-- Footer -->
     <footer class="py-20 bg-primary text-white text-center">
         <div class="max-w-6xl mx-auto px-4">
-            <h4 class="font-heading font-bold uppercase mb-4 text-xl">Find me on</h4>
+            <h4 class="font-heading font-bold uppercase mb-4 text-xl" data-i18n="footer.findme">Find me on</h4>
             <a class="btn-social" href="https://github.com/momiamfree" target="_blank">
                 <i class="fa-brands fa-github"></i>
             </a>
